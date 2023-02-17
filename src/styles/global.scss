@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+.main {
+  .sectionMain {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .imgBackground {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      width: 60%;
+    }
+
+    .section {
+      padding-top: 5%;
+      width: 100%;
+      margin-left: 15%;
+      height: 100%;
+
+      .figure {
+        .imgLogo {
+          object-fit: cover;
+        }
+      }
+
+      .womenMobile {
+        display: none;
+      }
+
+      .title {
+        margin-top: 15%;
+        color: var(--title-paragraph);
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 3.75rem;
+        letter-spacing: 10px;
+      }
+
+      .subtitle {
+        color: var(--subtitle);
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 3.75rem;
+        letter-spacing: 10px;
+      }
+
+      .paragraph {
+        color: var(--title-paragraph);
+        font-family: var(--font-family);
+        font-size: 0.75rem;
+        margin-top: 5%;
+        width: 55%;
+        line-height: 200%;
+      }
+      .sectionInput {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-top: 5%;
+
+        .input {
+          border-radius: 18px;
+          font-family: var(--font-family);
+          font-size: 0.75rem;
+          width: 50%;
+          height: 30px;
+          border: 1px solid var(--title-paragraph);
+          padding-left: 4%;
+
+          &:focus {
+            outline: none;
+            border: 1px solid var(--title-paragraph);
+          }
+        }
+
+        .invalidInput {
+          @extend .input;
+          border: 1px solid var(--text-emailInvalid);
+
+          &:focus {
+            outline: none;
+            border: 1px solid var(--text-emailInvalid);
+          }
+        }
+
+        .button {
+          position: absolute;
+          border-radius: 18px;
+          width: 10%;
+          height: 33px;
+          left: 49%;
+          border: 1px solid var(--title-paragraph);
+          background-color: var(--title-paragraph);
+          box-shadow: -5px 5px 12px -2px rgb(170, 167, 167);
+        }
+      }
+      .invalidEmail {
+        font-family: var(--font-family);
+        color: var(--text-emailInvalid);
+        font-weight: 300;
+        font-size: 0.625rem;
+        margin-top: 1%;
+      }
+    }
+
+    .sectionWomen {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+
+      .figureWomen {
+        width: 100%;
+        height: 100%;
+
+        .imgWomen {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .main {
+    width: 100%;
+    height: 100%;
+
+    .sectionMain {
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      height: 100%;
+      width: 100%;
+
+      .imgBackground {
+        display: none;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        margin: 0;
+
+        .womenMobile {
+          margin-top: 5%;
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          .imgWomen {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .title {
+          text-align: center;
+          width: 80%;
+        }
+        .subtitle {
+          text-align: center;
+          font-size: 2.5rem;
+        }
+        .paragraph {
+          text-align: center;
+          margin: 0 auto;
+          width: 80%;
+          margin-top: 5%;
+        }
+
+        .sectionInput {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 1%;
+
+          .input {
+            width: 70%;
+            height: 100%;
+            min-height: 50px;
+            border-radius: 50px;
+          }
+
+          .button {
+            height: 92%;
+            width: 20%;
+            left: 70%;
+            border-radius: 50px;
+          }
+        }
+        .invalidEmail {
+          align-self: self-start;
+          margin-left: 15%;
+        }
+      }
+      .sectionWomen {
+        display: none;
+      }
+    }
+  }
+}
